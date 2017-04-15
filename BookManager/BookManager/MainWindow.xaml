@@ -1,0 +1,86 @@
+﻿<Window x:Class="BookManager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:BookManager.ViewModel"
+        Title="Konstantins BookManager" Height="720" Width="540">
+    <Window.Resources>
+      <local:BookCollectionViewModel x:Key="myCollection"/> 
+    </Window.Resources>
+    
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="File">
+                <MenuItem Header="New" Command="{Binding New, Mode=OneWay, Source={StaticResource myCollection}}" />
+                <Separator/>
+                <MenuItem Header="Save" Command="{Binding Save, Mode=OneWay, Source={StaticResource myCollection}}"/>
+                <MenuItem Header="Load" Command="{Binding Load, Mode=OneWay, Source={StaticResource myCollection}}"/>
+                <Separator/>
+                <MenuItem Header="Quit" Click="QuitApplication" />
+            </MenuItem>
+        </Menu>
+        <UniformGrid Columns="1" Rows="2">
+            <ListBox ItemsSource="{Binding Source={StaticResource myCollection}}" Name="Listing" Background="Wheat">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Foreground="Black" FontWeight="Bold" FontSize="18" Text="{Binding Path=BookTitle}" />
+                            <TextBlock Foreground="Black" FontStyle="Italic" FontSize="16" Text="{Binding Path=BookAuthor}"/>
+                            <TextBlock Foreground="Black" FontSize="14" Text="{Binding Path=BookDate}" />
+                            <Canvas Width="50" Height="12" HorizontalAlignment="Left">
+                                <Ellipse Name="YearColor" Height="10" Stroke="Black"
+                                     Fill="{Binding Path=ColorYear}" Width="10" Canvas.Left="5" >
+                                </Ellipse>
+                            </Canvas>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Path=Year}"></TextBlock>
+                            </StackPanel>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <UniformGrid Columns="2" Rows="1">
+                <UniformGrid Columns="2" Rows="6">
+                    <Label Background="Cornsilk" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">Title:</Label>
+                    <!-- Title -->
+                    <TextBox 
+                Text="{Binding ElementName=Listing, Path=SelectedItem.BookTitle}"
+                />
+                    <Label Background="AliceBlue" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">Author:</Label>
+                    <!-- Author -->
+                    <TextBox
+                Text="{Binding ElementName=Listing, Path=SelectedItem.BookAuthor}"
+                />
+                    <Label Background="Cornsilk" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">ISBN:</Label>
+                    <!-- ISBN-->
+                    <TextBox
+                Text="{Binding ElementName=Listing, Path=SelectedItem.BookISBN}"
+                />
+                    <Label Background="AliceBlue" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">Publisher:</Label>
+                    <!-- Publisher -->
+                    <TextBox
+                Text="{Binding ElementName=Listing, Path=SelectedItem.BookPublisher}"
+                />
+                    <Label Background="Cornsilk" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">Date:</Label>
+                    <!-- Date -->
+                    <TextBox
+                Text="{Binding ElementName=Listing, Path=SelectedItem.BookDate}"
+                />
+                    <Label Background="AliceBlue" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">Price:</Label>
+                    <!-- Price -->
+                    <TextBox
+                Text="{Binding ElementName=Listing, Path=SelectedItem.BookPrice}"
+                />
+                </UniformGrid>
+                <UniformGrid Columns="1" Rows="2">
+                    <UniformGrid Columns="2" Rows="2">
+                        <Button Content="New Book" Command="{Binding New, Mode=OneWay, Source={StaticResource myCollection}}" />
+                        <Button Content="Delete Item" Command="{Binding Delete, Mode=OneWay, Source={StaticResource myCollection}}" CommandParameter="{Binding ElementName=Listing, Path=SelectedItem}"/>
+                        <Button Content="Save Book" Command="{Binding Save, Mode=OneWay, Source={StaticResource myCollection}}" />
+                        <Button Content="Load Book" Command="{Binding Load, Mode=OneWay, Source={StaticResource myCollection}}"/>
+                    </UniformGrid>
+                    <Button Content="Quit Application" IsCancel="True" Click="QuitApplication" />
+                </UniformGrid>
+            </UniformGrid>
+        </UniformGrid>
+    </DockPanel>
+</Window>

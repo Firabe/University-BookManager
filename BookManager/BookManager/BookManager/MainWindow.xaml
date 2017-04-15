@@ -1,0 +1,51 @@
+﻿<Window x:Class="BookManager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BookManager"
+        Title="MainWindow" Height="360" Width="540">
+    <Window.Resources>
+        <local:book x:Key="test">
+            
+            
+        </local:book>
+    </Window.Resources>
+    <UniformGrid Columns="2" Rows="1">
+        <UniformGrid Columns="2" Rows="6">
+        <Label Background="Cornsilk" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+            Titel
+        </Label>
+        <TextBox
+            Text="{Binding Source={StaticResource test}, Path=title, Mode=TwoWay}"
+        />
+        <Label Background="AliceBlue" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">Author</Label>
+        <TextBox
+            Text="{Binding Source={StaticResource test}, Path=author, Mode=TwoWay}"
+        />
+        <Label Background="Cornsilk" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">ISBN</Label>
+        <TextBox
+            Text="{Binding Source={StaticResource test}, Path=isbn, Mode=TwoWay}"
+        />
+        <Label Background="AliceBlue" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">Publisher</Label>
+        <TextBox
+            Text="{Binding Source={StaticResource test}, Path=publisher, Mode=TwoWay}"
+        />
+        <Label Background="Cornsilk" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">Date</Label>
+        <TextBox
+           Text="{Binding Source={StaticResource test}, Path=date, Mode=TwoWay}"
+        />
+        <Label Background="AliceBlue" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">Price</Label>
+        <TextBox
+            Text="{Binding Source={StaticResource test}, Path=price, Mode=TwoWay}"
+        />
+        
+        
+        </UniformGrid>
+        <ListBox>
+            
+        </ListBox>
+    </UniformGrid>
+
+    
+    
+</Window>

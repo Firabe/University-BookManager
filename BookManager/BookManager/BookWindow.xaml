@@ -1,0 +1,49 @@
+﻿<Window x:Class="BookManager.BookWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BookManager.ViewModel"
+        mc:Ignorable="d"
+        Title="BookWindow" Height="350" Width="300">
+    <Window.Resources>
+        <local:CreateNewBookViewModel x:Key="newBook"/> 
+    </Window.Resources>
+
+    <UniformGrid Columns="2" Rows="7">
+        <Label Background="Cornsilk" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">Title</Label>
+        <!-- Title -->
+        <TextBox 
+            TextWrapping="Wrap" Text="{Binding Source={StaticResource newBook}, Path=BookTitle}"
+            />
+        <Label Background="AliceBlue" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">Author</Label>
+        <!-- Author -->
+        <TextBox
+            TextWrapping="Wrap" Text="{Binding Source={StaticResource newBook}, Path=BookAuthor}"
+            />
+        <Label Background="Cornsilk" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">ISBN</Label>
+        <!-- ISBN-->
+        <TextBox
+            TextWrapping="Wrap" Text="{Binding Source={StaticResource newBook}, Path=BookISBN}"
+            />
+        <Label Background="AliceBlue" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">Publisher</Label>
+        <!-- Publisher -->
+        <TextBox
+            TextWrapping="Wrap" Text="{Binding Source={StaticResource newBook}, Path=BookPublisher}"
+            />
+        <Label Background="Cornsilk" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">Date</Label>
+        <!-- Date -->
+        <TextBox
+            TextWrapping="Wrap" Text="{Binding Source={StaticResource newBook}, Path=BookDate}"
+            />
+        <Label Background="AliceBlue" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">Price</Label>
+        <!-- Price -->
+        <TextBox
+            TextWrapping="Wrap" Text="{Binding Source={StaticResource newBook}, Path=BookPrice}"
+        />
+        <Button Background="DarkGreen" Content="Save Book" Command="{Binding New, Mode=OneWay, Source={StaticResource newBook}}" Click="SaveButton"/>
+        <Button Background="DarkRed" Content="Cancel" IsCancel="True" Click="CancelButton"/>
+
+
+    </UniformGrid>
+</Window>

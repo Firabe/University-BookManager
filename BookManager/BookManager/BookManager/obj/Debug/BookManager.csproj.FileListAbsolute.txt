@@ -1,0 +1,15 @@
+U:\5. Semester\Anwendungsprogrammierung\BookManager\BookManager\BookManager\bin\Debug\BookManager.exe.config
+U:\5. Semester\Anwendungsprogrammierung\BookManager\BookManager\BookManager\bin\Debug\BookManager.exe
+U:\5. Semester\Anwendungsprogrammierung\BookManager\BookManager\BookManager\bin\Debug\BookManager.pdb
+U:\5. Semester\Anwendungsprogrammierung\BookManager\BookManager\BookManager\obj\Debug\BookManager.csprojResolveAssemblyReference.cache
+U:\5. Semester\Anwendungsprogrammierung\BookManager\BookManager\BookManager\obj\Debug\MainWindow.g.cs
+U:\5. Semester\Anwendungsprogrammierung\BookManager\BookManager\BookManager\obj\Debug\App.g.cs
+U:\5. Semester\Anwendungsprogrammierung\BookManager\BookManager\BookManager\obj\Debug\BookManager_MarkupCompile.cache
+U:\5. Semester\Anwendungsprogrammierung\BookManager\BookManager\BookManager\obj\Debug\BookManager_MarkupCompile.lref
+U:\5. Semester\Anwendungsprogrammierung\BookManager\BookManager\BookManager\obj\Debug\MainWindow.baml
+U:\5. Semester\Anwendungsprogrammierung\BookManager\BookManager\BookManager\obj\Debug\BookManager.g.resources
+U:\5. Semester\Anwendungsprogrammierung\BookManager\BookManager\BookManager\obj\Debug\BookManager.Properties.Resources.resources
+U:\5. Semester\Anwendungsprogrammierung\BookManager\BookManager\BookManager\obj\Debug\BookManager.csproj.GenerateResource.Cache
+U:\5. Semester\Anwendungsprogrammierung\BookManager\BookManager\BookManager\obj\Debug\BookManager.exe
+U:\5. Semester\Anwendungsprogrammierung\BookManager\BookManager\BookManager\obj\Debug\BookManager.pdb
+U:\5. Semester\Anwendungsprogrammierung\BookManager\BookManager\BookManager\obj\Debug\GeneratedInternalTypeHelper.g.cs
